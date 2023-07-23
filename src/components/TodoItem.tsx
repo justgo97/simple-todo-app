@@ -39,20 +39,28 @@ const TodoItem = ({ todo }: TodoItemProps) => {
         </p>
       </div>
       <div className="todo-list-item-footer">
-        <button
-          className={`todo-list-item-footer-toggle ${
-            todo.completed ? "todo-list-item-footer-toggle-completed" : ""
-          }`}
-          onClick={onClickToggle}
-        >
-          Complete
-        </button>
-        <button
-          className="todo-list-item-footer-delete"
-          onClick={onClickDelete}
-        >
-          Delete
-        </button>
+        <div className="todo-list-item-footer-date">
+          {todo.date_modified &&
+            new Date(todo.date_modified).toLocaleDateString()}
+        </div>
+        <div className="todo-list-item-footer-buttons">
+          <button
+            className={`todo-list-item-footer-buttons-toggle ${
+              todo.completed
+                ? "todo-list-item-footer-buttons-toggle-completed"
+                : ""
+            }`}
+            onClick={onClickToggle}
+          >
+            Complete
+          </button>
+          <button
+            className="todo-list-item-footer-buttons-delete"
+            onClick={onClickDelete}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

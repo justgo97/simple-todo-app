@@ -57,10 +57,14 @@
       }
 
       &-footer {
-        justify-self: end;
-        align-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+
+        &-buttons {
+          
         display: flex;
         gap: 0.5rem;
+        
 
         &-toggle {
           $toggleButton: hsl(207, 76%, 55%);
@@ -78,6 +82,10 @@
           color: rgb(239 68 68);
           border-color: rgb(239 68 68);
         }
+
+        }
+
+        
       }
     }
   }
