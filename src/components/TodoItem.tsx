@@ -39,7 +39,7 @@ const TodoItem = ({ todo }: TodoItemProps) => {
         </p>
       </div>
       <div className="todo-list-item-footer">
-        <div className="todo-list-item-footer-date">
+        <div className="todo-list-item-footer-date text-secondary">
           {todo.date_modified &&
             new Date(todo.date_modified).toLocaleDateString()}
         </div>
