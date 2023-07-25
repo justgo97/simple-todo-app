@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/simple-todo-app/",
   resolve: {
     alias: {
       "~bootstrap": path.resolve(__dirname, "node_modules/bootstrap"),
