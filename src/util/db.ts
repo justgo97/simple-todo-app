@@ -7,8 +7,9 @@ class simpleTodosDatabase extends Dexie {
   constructor() {
     super("simpleTodosDatabase");
 
-    this.version(1).stores({
-      todos: "id, title, description, completed, date_created, date_modified",
+    this.version(2).stores({
+      todos:
+        "id, title, description, completed, order, date_created, date_modified",
     });
   }
 }

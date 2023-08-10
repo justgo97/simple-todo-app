@@ -25,7 +25,6 @@ const AddNewTodo = () => {
     //
     dispatch(
       todosActions.createTodo({
-        id: Date.now().toString(),
         title: todoTitle,
         description: todoDescription,
         completed: false,

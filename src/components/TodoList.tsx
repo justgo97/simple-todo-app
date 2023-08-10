@@ -1,17 +1,18 @@
 import { getAllTodos, useAppSelector } from "../store";
+
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   const todoList = useAppSelector(getAllTodos());
 
-  const todosKeys = Object.keys(todoList);
+  const todoArray = Object.keys(todoList).map((todoID) => todoList[todoID]);
 
   return (
     <>
-      {todosKeys.length ? (
+      {todoArray.length ? (
         <div className="todo-list">
-          {todosKeys.map((todoID) => (
-            <TodoItem key={todoID} todo={todoList[todoID]} />
+          {todoArray.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
           ))}
         </div>
       ) : (

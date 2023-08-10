@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ITodo, TodosList } from "../types";
+import { INewTodo, ITodo, TodosList } from "../types";
 import { dbFuncs } from "../util/db";
 
 const initialState: TodosList = {};
@@ -8,10 +8,19 @@ export const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    createTodo: (state, action: PayloadAction<ITodo>) => {
-      const newTodo = action.payload;
-      newTodo.date_created = newTodo.date_modified = Date.now();
+    createTodo: (state, action: PayloadAction<INewTodo>) => {
+      const dateNow = Date.now();
+
+      const newTodo = {
+        id: dateNow.toString(),
+        ...action.payload,
+        order: dateNow,
+        date_created: dateNow,
+        date_modified: dateNow,
+      };
+
       state[newTodo.id] = { ...newTodo };
+
       dbFuncs.createTodo(newTodo);
     },
     deleteTodo: (state, action: PayloadAction<string>) => {
