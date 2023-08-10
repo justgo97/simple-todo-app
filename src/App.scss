@@ -1,5 +1,13 @@
 .todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 
   button {
     border-radius: 0.25rem;
@@ -15,6 +23,7 @@
   &-list {
     padding-top: 1rem;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 0.5rem;
 
@@ -59,33 +68,29 @@
       &-footer {
         display: flex;
         justify-content: space-between;
+        gap: 0.1rem;
 
         &-buttons {
-          
-        display: flex;
-        gap: 0.5rem;
-        
+          display: flex;
+          gap: 0.5rem;
 
-        &-toggle {
-          $toggleButton: hsl(207, 76%, 55%);
+          &-toggle {
+            $toggleButton: hsl(207, 76%, 55%);
 
-          color: $toggleButton;
-          border-color: $toggleButton;
+            color: $toggleButton;
+            border-color: $toggleButton;
 
-          &-completed {
-            color: gray;
-            border-color: gray;
+            &-completed {
+              color: gray;
+              border-color: gray;
+            }
+          }
+
+          &-delete {
+            color: rgb(239 68 68);
+            border-color: rgb(239 68 68);
           }
         }
-
-        &-delete {
-          color: rgb(239 68 68);
-          border-color: rgb(239 68 68);
-        }
-
-        }
-
-        
       }
     }
   }
